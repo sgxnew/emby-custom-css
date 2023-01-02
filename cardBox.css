@@ -1,0 +1,29 @@
+button.cardImageContainer{
+    border-top-right-radius: 3px!important;
+    border-bottom-right-radius: 3px!important;
+    border-top-left-radius: 3px!important;
+    border-bottom-left-radius: 3px!important;
+}
+:root .tabContent:not([data-index="12"]) .itemsContainer:not(.peopleItemsContainer) .card:not(.backdropCard) div.cardScalable{
+    border-top-right-radius: 4px!important;
+    border-bottom-right-radius: 4px!important;
+    border-top-left-radius: 4px!important;
+    border-bottom-left-radius: 4px!important;
+}
+
+.verticalSection .cardBox,.virtualScrollItem  .cardBox,div[tabindex="0"].card .cardBox {
+    outline: 1px solid #4d4d4e85!important;
+    border-radius: 4px!important;
+    box-shadow: 0 0.06933em 0.06933em 0 rgb(0 0 0 / 14%), 0 0.13866em 0.06933em -0.06933em rgb(0 0 0 / 12%), 0 0.06933em 0.208em 0 rgb(0 0 0 / 20%)!important;
+}
+
+img.cardImage{
+    border-top-right-radius: 3px!important;
+    border-bottom-right-radius: 3px!important;
+    border-top-left-radius: 3px!important;
+    border-bottom-left-radius: 3px!important;
+}
+i.cardPlayedIndicator {
+    border-top-right-radius: 3px!important;
+}
+

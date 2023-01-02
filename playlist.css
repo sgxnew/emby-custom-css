@@ -1,0 +1,146 @@
+
+/* Media list unplayed badge */
+i.listItemIndicator.listItemPlayedIndicator.playedIndicator.md-icon {
+  display: none;
+}
+
+.virtualScrollItem.listItem.itemAction.focusable.listItemCursor.listItem-hoverable.listItem-largeImage.listItem-withContentWrapper.detailsListItem, .listItem.itemAction.focusable.listItemCursor.listItem-hoverable.listItem-withContentWrapper.detailsListItem {
+  overflow: hidden !important;
+}
+
+.listViewUserDataButton.playstatebutton-icon {
+  overflow: visible !important;
+}
+/*
+.listViewUserDataButton[data-played="false"]:before {
+  width: 8px;
+  height: 500px;
+  transform: unset;
+  content: '';
+  background: #e5a00d!important;
+  position: absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.2);
+  top: -200px;
+  right: -85px;
+  z-index: 1;
+  font-size: 10px;
+  padding: 2px;
+}
+
+.trackList[data-monitor="PlaylistItems"] .listViewUserDataButton[data-played="false"]:before {
+  right: -140px !important; 
+}
+*/
+.listViewUserDataButton[data-played="true"]:before {
+  width: 8px;
+  height: 500px;
+  transform: unset;
+  content: '';
+  background: red!important;
+  position: absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.2);
+  top: -200px;
+  right: -85px;
+  z-index: 1;
+  font-size: 10px;
+  padding: 2px;
+}
+
+.trackList[data-monitor="PlaylistItems"] .listViewUserDataButton[data-played="true"]:before {
+  right: -140px !important; /* Playlist fix */
+}
+
+@media (min-width: 100em) {
+  .formDialogContent .portraitCard, .formDialogContent .smallBackdropCard, .formDialogContent .squareCard {
+    width: 14.32%;
+  }
+}
+
+
+
+.trackList .listItemBody {
+  padding: .35em 1.3em;
+}
+.detailImageContainer .cardBox.cardBox-touchzoom {
+  margin: 0 !important;
+}
+.detailImageContainer-main {
+  margin-right: 2.5em !important;
+  margin-bottom: 10px !important;
+}
+.trackList .listItemImageContainer {
+  box-shadow: 5px 5px 10px -5px rgb(0 0 0 / 50%)
+}
+.detailImageContainer .card.detailImageContainerCard.card-hoverable {
+  box-shadow: 5px 5px 17px -5px rgb(0 0 0 / 50%)
+}
+
+/* Playlists */
+.trackList[data-monitor="PlaylistItems"] .listItemImageContainer {
+  max-height: 16.7em;
+}
+.listItemImageContainer-large.listItemImageContainer-fourThree {
+  width: 11vw !important;
+  height: 7vw !important;
+  aspect-ratio: auto !important;
+}
+.listItemImage-backdrop {
+  -webkit-background-size: cover !important;
+  background-size: cover !important;
+  object-fit: cover !important;
+}
+.trackList .detailsListItem.listItem {
+  -webkit-backdrop-filter: saturate(1) blur(3em);
+  backdrop-filter: saturate(1) blur(3em);
+  background: #ffffff15 !important;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border-bottom: 1px solid #ffffff15;
+}
+
+.trackList .detailsListItem.listItem:nth-child(odd) {
+  background: #ffffff10 !important;
+}
+
+.trackList.vertical-list .listItemImageContainer button.listItemImageButton.itemAction.paper-icon-button-light {
+  opacity: 0;
+}
+.trackList.vertical-list .listItemImageContainer:hover button.listItemImageButton.itemAction.paper-icon-button-light {
+  opacity: 1;
+  -webkit-transition: opacity .1s ease-in-out;
+  -o-transition: opacity .1s ease-in-out;
+  transition: opacity .1s ease-in-out;
+}
+.listItem-hoverable:hover, .listItem-hoverable:hover .chkListItemSelectContainer {
+  border-color: #ffffff15 !important;
+}
+.detailsListItem.focusable.listItem-hoverable:hover, .detailsListItem.focusable.listItem-hoverable:hover .chkListItemSelectContainer {
+  background: transparent !important;
+}
+.trackList .detailsListItem.focusable.listItem {
+  -webkit-backdrop-filter: saturate(1) blur(3em);
+  backdrop-filter: saturate(1) blur(3em);
+  background: #ffffff15 !important;
+  padding: 5px 30px;
+  border-radius: 5px;
+  border-bottom: 1px solid #ffffff15;
+  box-sizing: border-box;
+}
+.trackList .detailsListItem.focusable.listItem:nth-child(odd) {
+  background: #ffffff10 !important;
+}
+.chkListItemSelectContainer {
+  font-size: 50% !important;
+}
+@media (hover: hover) and (pointer: fine) {
+  .chkListItemSelectContainer {
+    left: -4em !important;
+  }
+}
+.listItem-border {
+  border-bottom-width: 0 !important;
+}

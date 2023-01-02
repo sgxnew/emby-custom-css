@@ -1,0 +1,54 @@
+/* Custom media card slideaways */
+/* ============================ */
+/* Collections scroller animate down using id 4462 - Check your URL and use your parentId numbers instead */
+.flex.align-items-center.justify-content-center.focuscontainer-x.itemsViewSettingsContainer.padded-top.padded-bottom.focusable:hover ~ 	.itemsContainer.flex.flex-grow.vertical-wrap.centered.padded-bottom-page.virtualItemsContainer.virtual-scroller-overflowvisible.virtual-scroller[data-parentid='4462'] {
+		transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+		transform: translateY(82vh);
+		transition: 02.0s;
+	}
+
+.flex.align-items-center.justify-content-center.focuscontainer-x.itemsViewSettingsContainer.padded-top.padded-bottom.focusable:not(hover) ~ 	.itemsContainer.flex.flex-grow.vertical-wrap.centered.padded-bottom-page.virtualItemsContainer.virtual-scroller-overflowvisible.virtual-scroller[data-parentid='4462'] {
+			transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+			transform: translateY(0vh);
+			transition: 02.0s;		
+			transition-delay: 3s;
+	}
+
+/* Playlist animation slide to the right id 14097 */
+.flex.align-items-center.justify-content-center.focuscontainer-x.itemsViewSettingsContainer.padded-top.padded-bottom.focusable:hover ~ 	.itemsContainer.flex.flex-grow.vertical-wrap.centered.padded-bottom-page.virtualItemsContainer.virtual-scroller-overflowvisible.virtual-scroller[data-parentid='14097'] {
+		transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+		transform: translateX(106%);
+		transition: 02.0s;
+
+	}
+.flex.align-items-center.justify-content-center.focuscontainer-x.itemsViewSettingsContainer.padded-top.padded-bottom.focusable:not(hover) ~ 	.itemsContainer.flex.flex-grow.vertical-wrap.centered.padded-bottom-page.virtualItemsContainer.virtual-scroller-overflowvisible.virtual-scroller[data-parentid='14097'] {
+		transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+		transform: translateX(0%);
+		transition: 02.0s;
+		transition-delay: 3s;
+
+	}
+
+
+/*
+
+.padded-bottom-page {
+    padding-bottom: calc(95em + env(safe-area-inset-bottom,0)) !important;
+    margin-top: 22px;
+}
+*/
+/*集合播放列表等无背景时默认给个背景图*/
+:root:not(.withHeaderTabs):not(.preload) .backgroundContainer:not(.withBackdrop):not(.backgroundContainer-withdockeddrawer){
+     //background:url(http://img.mm4000.com/file/0/78/20528ce94b.jpg)no-repeat center center;
+     //background:url(http://img.mm4000.com/file/0/78/5ac5e44bcc.jpg)no-repeat top center;
+     //background:url(http://img.mm4000.com/file/0/78/7f567f3f03.jpg)no-repeat top center;
+     background:url(http://img.mm4000.com/file/9/49/f3649c6ad9.jpg)no-repeat top center;
+     //background:url(http://beijing.gongjuji.net/Img/Down/138)no-repeat center right;
+     //background:url(http://beijing.gongjuji.net/imgdata/big/0a1aa8c4-776a-4309-9764-a3b20f0edb61.jpg)no-repeat center right;
+     background-size: cover;
+     filter: blur(.3em) saturate(1.8);     
+}
+:root:not(.withHeaderTabs):not(.preload):has(.itemsViewSettingsContainer:hover) .backgroundContainer:not(.withBackdrop):not(.backgroundContainer-withdockeddrawer){
+     filter: none;
+
+}

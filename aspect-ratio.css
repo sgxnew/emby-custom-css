@@ -1,0 +1,1722 @@
+/*播放按钮样式*/
+:root .cardOverlayButtonIcon:not([data-action="play"]):not([data-action="resume"]):not(:last-child:first-child){
+    background-color: var(--theme-background)!important;
+    font-size: 1.3em;
+    margin: 0 .08em;
+}
+
+:root .cardOverlayButtonIcon[data-action="play"],
+:root .cardOverlayButtonIcon[data-action="resume"],
+:root .listItemOverlayButtonIcon{
+    background-color: var(--theme-background);
+    border: 2px solid #e50914;
+    color: #e50914;
+}
+
+
+/*头部阴影渐变*/
+.skinHeader.semiTransparent {
+    background: linear-gradient( to bottom, rgb(20, 20, 20), transparent ) !important;
+}
+/*季详细内容宽度
+.detailTextContainer:has(.mediaInfoPrimary.hide) .overview-container .readOnlyContent {
+    max-width: 100%;
+}
+*/
+/*电视模式优化*/
+.layout-tv .home-horiz-tabContent .padded-top-page {
+    padding-top: calc(var(--header-height) - 2em) !important;
+}
+@supports (height:calc(3.125em + 2 * max(3em,4em))){
+.layout-tv:has(.home-horiz:not(.hide)) .skinHeader {
+    padding-top: max(0.5em,env(safe-area-inset-top,0));
+}
+}
+.layout-tv .categoryItemsContainer,.layout-tv .horizontalSection.activePrograms .itemsContainer.itemsContainer-tv {
+    padding-bottom: 2em;
+}
+.layout-tv .selectedItemInfo {
+    margin-top: -1em;
+}
+.layout-tv .horizontalSection .cardImage{
+    object-fit: cover;
+}
+/*TV 详细页隐藏播放列表封面*/
+.topDetailsContainer>.item-fixed-side{display:none}
+
+/*Flashing*/
+@-webkit-keyframes marquee2{
+    /* 开始状态 */
+  0% {
+   transform: translateX(0px);
+  }
+   /* 结束状态 */
+  100% {
+   transform: translateX(-100%);
+  }
+}
+@keyframes marquee2{
+    /* 开始状态 */
+  0% {
+   transform: translateX(0px);
+  }
+   /* 结束状态 */
+  100% {
+   transform: translateX(-100%);
+  }
+}
+/*Alert Text*/
+.homeSectionsContainer:before {
+    content: "本页面含有成人内容，未满18岁禁止观看！因视频含有呻吟、娇喘等声音内容，欢迎使用外放观看视频，推荐在公共场合例如地铁、餐馆观看，更加刺激！";
+    position: relative;
+    margin: 0 25vw;
+    font-size: 150%;
+    font-weight: bold;
+    top: -0.5em;
+    color: red;
+    white-space: nowrap;
+    display: inline-block;
+    z-index: 1;
+    -webkit-animation: marquee2 linear 25s infinite;
+    animation: marquee2 25s linear infinite normal;
+    text-shadow: 0 0 5px #5eff79, 0 0 5px #ff5a5a;
+    text-shadow: 0 0 3px #000, 0 0 3px #af5aff;
+    #text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,-1px -1px 0 #000;
+}
+html:has(.view:not(.hide):not([data-type="home"]):not([data-type="video-osd"])):before{
+    content: "本页面含有成人内容，未满18岁禁止观看！因视频含有呻吟、娇喘等声音内容，欢迎使用外放观看视频，推荐在公共场合例如地铁、餐馆观看，更加刺激！";
+    position: relative;
+    margin: 0 25vw;
+    font-size: 120%;
+    font-weight: bold;
+    color: red;
+    white-space: nowrap;
+    display: inline-block;
+    z-index: 1;
+    -webkit-animation: marquee2 linear 25s infinite;
+    animation: marquee2 25s linear infinite normal;
+    text-shadow: 0 0 5px #5eff79, 0 0 5px #ff5a5a;
+    text-shadow: 0 0 3px #000, 0 0 3px #af5aff;
+    #text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,-1px -1px 0 #000;
+}
+html:has(.headroom-scrolling):before,html:has([style="translate: 0 calc(-100% + env(safe-area-inset-top, 0));"]):before{
+    content:""!important;
+}
+/*全局定义图片比例*/
+:root {
+ --Portrait-ratio-org: 378/538;
+ --Portrait-ratio: 398/558;
+ --Backdrop-ratio: 826/564;
+ --Backdrop-ratio-org: 800/538;
+ --Backdrop-padding: 68.28% ;
+ --Portrait-padding: 137.5%;
+}
+
+
+/*图片比例*/
+
+.scrollSlider:not(.settingsContainer) .itemsContainer:not(.itemsContainer-finepointerwrap):not(.chaptersItemsContainer):not([data-monitor="Plugins"]):not([data-monitor="Devices"]):not(.detailMediaStreamsItemsContainer):not(.extrasItemsContainer):not(.moreFromSeasonItemsContainer):not(.videoosd-padded-left):not(.detailImageContainer):not([data-parentid="437651"]):not([data-parentid="523271"]):not([data-parentid="229144"]) .backdropCard:not([data-action="edit"]) .cardPadder-backdrop:not([data-action="edit"]){padding-bottom:var(--Backdrop-padding);}
+.cardPadder-square{padding-bottom:100%;}
+.itemsContainer:not(.peopleItemsContainer):not([data-parentid="437651"]):not([data-parentid="523271"]):not([data-parentid="229144"]) .cardPadder-portrait{padding-bottom:var(--Portrait-padding);}
+.cardPadder-fourThree{padding-bottom:75%;}
+.cardPadder-margin.cardPadder-fourThree{margin-bottom:75%}
+.cardPadder-banner{padding-bottom:18.5%;}
+.cardPadder-margin.cardPadder-banner{padding-bottom:18.5%;}
+
+@supports (aspect-ratio:16 / 9){
+	.scrollSlider:not(.settingsContainer) .itemsContainer:not(.itemsContainer-finepointerwrap):not(.chaptersItemsContainer):not([data-monitor="Plugins"]):not([data-monitor="Devices"]):not(.detailMediaStreamsItemsContainer):not(.extrasItemsContainer):not(.moreFromSeasonItemsContainer):not(.videoosd-padded-left):not(.detailImageContainer):not([data-parentid="437651"]):not([data-parentid="523271"]):not([data-parentid="229144"]) .backdropCard:not([data-action="edit"]) .cardPadder-backdrop:not([data-action="edit"]){padding-bottom:0!important;aspect-ratio:var(--Backdrop-ratio)}
+	.cardPadder-square{padding-bottom:0!important;aspect-ratio:1}
+	.itemsContainer:not(.peopleItemsContainer):not(.childrenItemsContainer:not([data-monitor="CollectionItems"])):not([data-parentid="437651"]):not([data-parentid="523271"]):not([data-parentid="229144"])  .cardPadder-portrait{padding-bottom:0!important;aspect-ratio:var(--Portrait-ratio)}
+	.cardPadder-fourThree{padding-bottom:0!important;aspect-ratio:4/3}
+	.cardPadder-banner{padding-bottom:0!important;aspect-ratio:1000/185}
+	.cardPadder-margin{margin-bottom:0!important}
+}
+/*图片原比例填充满卡片显示*/
+
+.coveredImage, .cardImageContainer{
+    -webkit-background-size: cover!important;
+    background-size: cover!important;
+    background-position: center center !important;
+    -o-object-fit: cover!important;
+    object-fit: cover!important;
+    object-position: center center !important;
+}
+/*调整略缩图卡片浮层*/
+:is([data-parentid="5"],[data-parentid="4643"]).itemsContainer:not(.itemsContainer-finepointerwrap):not(.chaptersItemsContainer):not([data-monitor="Plugins"]):not(.detailMediaStreamsItemsContainer):not(.extrasItemsContainer) .backdropCard .cardOverlayContainer:not([data-action="edit"]){
+    #background: rgba(255, 255, 255, 0.3);
+    border-style: solid;
+    border-width: 0.2px;
+    border-color: #7372e9;
+    #border-color: rgba(255, 255, 255, 0.3);
+    #border-color: hsl(var(--theme-primary-color-hue),var(--theme-primary-color-saturation),var(--theme-primary-color-lightness));
+    border-radius: .0rem;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    margin-top: 1.2%;
+    padding-bottom: 65.5%!important ;
+    clip-path: polygon(0 27%, 18% 0,100% 0,100% 100%,0 100%,0 0,9.7% 0,0 14.7%);
+    aspect-ratio:var(--Backdrop-ratio-org)!important
+
+}
+/*兼容旧版浏览器*/
+.itemsContainer[data-parentid="5"]:not(.itemsContainer-finepointerwrap):not(.chaptersItemsContainer):not([data-monitor="Plugins"]):not(.detailMediaStreamsItemsContainer):not(.extrasItemsContainer) .backdropCard .cardOverlayContainer:not([data-action="edit"]),.itemsContainer[data-parentid="4643"]:not(.itemsContainer-finepointerwrap):not(.chaptersItemsContainer):not([data-monitor="Plugins"]):not(.detailMediaStreamsItemsContainer):not(.extrasItemsContainer) .backdropCard .cardOverlayContainer:not([data-action="edit"]){
+    #background: rgba(255, 255, 255, 0.3);
+    border-style: solid;
+    border-width: 0.2px;
+    border-color: #7372e9;
+    #border-color: rgba(255, 255, 255, 0.3);
+    #border-color: hsl(var(--theme-primary-color-hue),var(--theme-primary-color-saturation),var(--theme-primary-color-lightness));
+    border-radius: .0rem;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    margin-top: 1.2%;
+    padding-bottom: 65.5%!important ;
+    clip-path: polygon(0 27%, 18% 0,100% 0,100% 100%,0 100%,0 0,9.7% 0,0 14.7%);
+    aspect-ratio:var(--Backdrop-ratio-org)!important
+}
+
+/*封面略缩图进度条调整*/
+:is([data-parentid="5"],[data-parentid="4643"]) .backdropCard .itemProgressBar {
+    background: #333;
+    background: rgba(51,51,51,.8);
+    position: relative;
+    height: .22em;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+/*兼容旧版浏览器*/
+[data-parentid="4643"] .backdropCard .itemProgressBar,[data-parentid="5"]  .backdropCard .itemProgressBar{
+    background: #333;
+    background: rgba(51,51,51,.8);
+    position: relative;
+    height: .22em;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
+div.countIndicator {
+    border-radius: 0.3em;
+    padding: 0 0.2em 0 0.2em;
+    height: fit-content;
+    width: fit-content;
+    color: #0a3a80;
+}
+/*卡片鼠标悬停缩放效果*/
+/*
+.itemsContainer:not(.itemsContainer-finepointerwrap):not(.chaptersItemsContainer):not(.peopleItemsContainer):not(.detailMediaStreamsItemsContainer):not(.extrasItemsContainer):not(.appearsOnListsItemsContainer):not(.similarItemsContainer) .cardBox:hover{
+	transform: scale(1.06);
+	border: 1px solid #7372e9;
+	box-shadow: 0 0 10px #719ece!important;
+	margin-top: 20px!important;
+
+}
+*/
+
+:root .itemsContainer .cardBox-touchzoom:hover{
+	transform: scale(1.04);
+	outline: 1px solid #7372e9!important;
+                margin:6%!important;
+	box-shadow: 0 0 10px #719ece!important;
+}
+.itemsContainer .backdropCard .cardBox-touchzoom:hover{
+                margin:min(.72em,max(.48em,1.78vw))!important;
+                transform: scale(1.02);
+}
+.itemsContainer .bannerCard .cardBox-touchzoom:hover{
+                margin:min(.72em,max(.48em,1.78vw))!important;
+                transform: scale(1.02);
+}
+.details-additionalContent .itemsContainer:not(.detailMediaStreamsItemsContainer) .backdropCard .cardBox-touchzoom:hover{
+                margin:min(.72em,max(.48em,1.78vw))!important;
+                transform: scale(1.02);
+}
+
+.cardBox-touchzoom {
+    transition: -webkit-transform .2s ease-out;
+    transition: transform .2s ease-out;
+}
+
+/*去掉版本号显示*/
+.appInfo.secondaryText,.dialogContainer .listItemBodyText.listItemBodyText-nowrap.actionSheetItemText.listItemBodyText-lf.listItemBodyText-secondary{display:none;}
+
+/*设置-侧边导航栏去掉某些项*/
+.mainDrawerScrollSlider  div:nth-last-child(7):first-child ~ .emby-collapse:nth-last-child(4){display:none}
+
+/*欧美合集*/
+.tabContent[data-index="8"] .itemsContainer[data-parentid="229144"] .cardPadder-portrait,.tabContent[data-index="9"] .itemsContainer[data-parentid="229144"] .cardPadder-square{
+    aspect-ratio: 16/9!important;
+}
+.tabContent[data-index="8"] .itemsContainer[data-parentid="229144"] .coveredImage, .tabContent[data-index="8"] .itemsContainer[data-parentid="229144"] .cardImageContainer {
+    -o-object-fit: fill!important;
+    object-fit: fill!important;
+}
+
+/*集合播放列表等无背景时默认给个背景图
+:root:not(.withHeaderTabs):not(.preload) .backgroundContainer:not(.withBackdrop):not(.backgroundContainer-withdockeddrawer){
+     background:url(http://img.mm4000.com/file/0/78/20528ce94b.jpg)no-repeat center center;
+     background:url(http://img.mm4000.com/file/0/78/7f567f3f03.jpg)no-repeat top center;
+     background:url(http://beijing.gongjuji.net/imgdata/big/0a1aa8c4-776a-4309-9764-a3b20f0edb61.jpg)no-repeat center right;
+     background-size: cover;
+     filter: blur(.3em) saturate(1.8);     
+}
+:root:not(.withHeaderTabs):not(.preload):has(.itemsViewSettingsContainer:hover) .backgroundContainer:not(.withBackdrop):not(.backgroundContainer-withdockeddrawer){
+     filter: none;
+
+}*/
+/*季等图填充*/
+.verticalSection.childrenSection .cardImage {
+    object-fit: cover;
+}
+/* 电视隐藏导航栏建议,即将上映,网络等按钮*/
+.emby-tab-button:nth-last-child(9):first-child ~ .emby-tab-button:nth-last-child(8),.emby-tab-button:nth-last-child(9):first-child ~ .emby-tab-button:nth-last-child(7),.emby-tab-button:nth-last-child(9):first-child ~ .emby-tab-button:nth-last-child(3){
+      display:none;
+}
+
+
+/*隐藏电影导航栏预告按钮*/
+.emby-tab-button:nth-last-child(13):first-child ~ .emby-tab-button[data-index="3"] {display: none; }
+
+/*隐藏文件夹图标*/
+div.tabContent:last-child  .cardIndicatorIcon {display: none;}
+
+/*修改大表哥海报css*/
+
+.mainAnimatedPages.skinBody-withFullDrawer .banner-slider{
+    padding-left: 2.8rem;
+}
+
+.mainAnimatedPages.skinBody-withMiniDrawer .banner-slider {
+    padding-left: 0.9rem;
+}
+
+.mainAnimatedPages:not(.skinBody-withMiniDrawer):not(.skinBody-withFullDrawer) .banner-slider {
+      padding-left: 1rem;
+}
+
+
+
+div.banners button.emby-scrollbuttons-scrollbutton.paper-icon-button-light {display: none;}
+div.banners .controls-slider {
+    bottom: 15%;
+    right: 10%;
+    white-space: nowrap;
+    display:none;
+}
+
+@media not all and (min-width: 100em){
+img.banner-slider__cover {
+     height: 45vw;
+}
+}
+img.banner-slider__cover {
+    object-position: top;
+    background: rgb(255 255 255 / 10%) !important;
+    box-shadow: #000 0rem 2rem 2rem -2rem;
+    border-radius: 0px !important;
+    border: medium solid transparent !important;
+}
+.banner-slider__link::before {
+    border: medium solid transparent !important;
+}
+div.banner-slider__item {
+    padding: 0.85rem 2vw 2.1rem 0;
+    width: 92vw;
+
+}
+img.banner-slider__title {
+    min-height: 3.5vw;
+    max-height: 6vw;
+
+}
+@media not all and (min-width: 100em){
+img.banner-slider__title {
+    margin-top: 4rem;
+    margin-left: 7em;
+}
+}
+/*海报跑马灯 效果1*/
+.banner-slider{
+    width:1000%;
+    margin:0px auto;
+    animation:text 100s infinite  linear;
+    #overflow: hidden;
+}
+/*
+.banner-slider:hover,.controls-slider:hover+.banner-slider,button:hover+.controls-slider+.banner-slider,button:hover+button+.controls-slider+.banner-slider{
+  animation-play-state: paused;
+}
+*/
+
+ .skinHeader:not(.headroom-hidden)~.view .banners:hover .banner-slider,.skinHeader.headroom-scrolling~.view .banners .banner-slider{
+  animation-play-state: paused;
+  #animation:none;
+}
+.banner-slider img{
+    float:left;
+}
+@keyframes text {          /*0%-10%是播放下一个图片，0%-5%是图片暂停的时间
+    0%,5%{
+        margin-left:0vw;
+    }
+    10%,15%{
+        margin-left:-94vw;
+    }
+    20%,25%{
+        margin-left:-188vw;
+    }
+    30%,35%{
+        margin-left:-282vw;
+    }
+    40%,45%{
+        margin-left:-376vw;
+    }
+    50%,55%{
+        margin-left:-470vw;
+    }
+    60%,65%{
+        margin-left:-564vw;
+    }
+    70%,75%{
+        margin-left:-658vw;
+    }
+    80%,85%{
+        margin-left:-752vw;
+    }
+    90%,95%{
+        margin-left:-846vw;
+    }
+*/
+    0%,9%{
+        margin-left:0vw;
+    }
+    10%,19%{
+        margin-left:-94vw;
+    }
+    20%,29%{
+        margin-left:-188vw;
+    }
+    30%,39%{
+        margin-left:-282vw;
+    }
+    40%,49%{
+        margin-left:-376vw;
+    }
+    50%,59%{
+        margin-left:-470vw;
+    }
+    60%,69%{
+        margin-left:-564vw;
+    }
+    70%,79%{
+        margin-left:-658vw;
+    }
+    80%,89%{
+        margin-left:-752vw;
+    }
+    90%,99%{
+        margin-left:-846vw;
+    }
+}
+
+
+/*卡片标题跑马灯*/
+.itemsContainer:not(.itemsContainer-finepointerwrap):not(.peopleItemsContainer) .cardText  .cardTextActionButton:hover{
+  overflow: initial;
+  animation: marquee 10s linear infinite normal;
+}
+
+@keyframes marquee{
+    /* 开始状态 */
+  0% {
+   transform: translateX(0px);
+  }
+   /* 结束状态 */
+  100% {
+   transform: translateX(-400%);
+  }
+}
+
+
+/* lists  */
+.virtualScrollItem.listItem .listItemImageContainer {
+  max-height: 16.7em;
+}
+.virtualScrollItem.listItem {
+    overflow: hidden !important;
+}
+.listItemImage-backdrop {
+  -webkit-background-size: cover !important;
+  background-size: cover !important;
+  object-fit: cover !important;
+}
+
+ .virtualScrollItem.listItem {
+  -webkit-backdrop-filter: saturate(1) blur(3em);
+  backdrop-filter: saturate(1) blur(3em);
+  background: #ffffff15 !important;
+  padding: 5px 30px;
+  border-radius: 5px!important;
+  border-bottom: 1px solid #ffffff15;
+  box-sizing: border-box;
+}
+
+.virtualScrollItem.listItem:nth-child(odd):hover{
+  background: #d8b7b76e !important;
+}
+.virtualScrollItem.listItem:nth-child(even):hover{
+  background: #d6121230 !important;
+}
+
+.chkListItemSelectContainer {
+  font-size: 50% !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .chkListItemSelectContainer {
+    left: -4em !important;
+  }
+}
+.listItem-border {
+  border-bottom-width: 0 !important;
+}
+.virtualScrollItem.focusable.listItem-hoverable:hover .chkListItemSelectContainer {
+  background: transparent !important;
+}
+
+/*表格视图优化*/
+.dataGridItem:nth-child(even) {
+    background: rgba(0,0,0,.2);
+    -webkit-backdrop-filter: saturate(1) blur(3em);
+    backdrop-filter: saturate(1) blur(3em);
+}
+.dataGridItem:nth-child(odd) {
+    background: rgba(0,0,0,.2);
+    -webkit-backdrop-filter: saturate(1) blur(3em);
+    backdrop-filter: saturate(1) blur(3em);
+}
+/*播放等按钮大小*/
+@media (min-width: 85em){
+div.details-largefont .detailButtons, div.details-largefont .overview-container {
+    font-size: 100%;
+}
+}
+
+/*去掉视频播放界面某些按钮*/
+button[data-index="3"].videoosd-tab-button,button[data-index="4"].videoosd-tab-button{
+    display: none;
+}
+/*播放列表*/
+div.listItemImageContainer-portrait {
+    //height: 10em;
+    aspect-ratio: var(--Portrait-ratio-org)!important;
+}
+.listItemImage.listItemImage-portrait.coveredImage{
+    aspect-ratio: var(--Portrait-ratio-org)!important;
+}
+
+.dashboardSection .listItem-content{
+    padding-left: 0.3em;
+}
+
+
+.dashboardSection .listItemImageContainer.defaultCardBackground{
+    border-radius: 100em;
+}
+
+/*章节文字现在在图片内*/
+.verticalSection.scenesSection .cardText-first {
+    bottom: 5.5px;
+    left: 0.5em;
+    position: absolute;
+    background: #296176d1 !important;
+    background:var(--theme-background) !important;
+    border-radius: 30px;
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    padding-bottom: 1px!important;
+    padding-top: 1px!important;
+    opacity: 0.7;
+}
+.verticalSection.scenesSection .cardText-secondary {
+    bottom: 5.5px;
+    right: 0.5em;
+    position: absolute;
+    background: #296176d1 !important;
+    background:var(--theme-background) !important;
+    border-radius: 30px;
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    padding-bottom: 2px!important;
+    padding-top: 2px!important;
+    opacity: 0.7;
+}
+/*
+:root .verticalSection.scenesSection .cardBox{
+    outline: medium solid rgb(255 255 255 / 20%) !important;
+}*/
+.verticalSection.scenesSection .cardImage {
+    background-size: cover;
+    object-fit: cover;
+}
+
+
+/*隐藏无头像演员 第一个演员头像不能为空
+.verticalSection.peopleSection .card:has(.defaultCardBackground0):not(:first-child),.verticalSection.peopleSection .cardText-secondary{
+    display:none!important;
+}
+*/  
+
+/*不显示导演头像*/
+.itemView:has(.directors:not(.hide))  .peopleSection .card.portraitCard:last-child:not(:first-child) {
+    display:none;
+}
+
+
+/*修复Iconic Image Enhancer 图标选择窗透明问题*/
+.iconicConfigurationPage .glyphs-layout {
+    background: var(--theme-background);
+}
+
+/*
+.cardContent-shadow {
+    background-color:transparent !important;
+}
+*/
+
+/*light主题修改*/
+.theme-light:root .skinHeader.semiTransparent:not(.videoOsdHeader){
+   color:inherit!important;
+}
+.theme-light:root .backgroundContainer,.theme-light:root .dialog,.theme-light:root .formDialogFooter:not(.formDialogFooter-clear),.theme-light:root .formDialogHeader:not(.formDialogHeader-clear){ 
+      background: -webkit-linear-gradient(to right, rgb(201, 214, 255), rgb(226, 226, 226)); 
+      background: linear-gradient(to right, rgb(201, 214, 255), rgb(226, 226, 226));
+}
+.theme-light:root div.drawer-docked {
+    background: none!important;
+}
+.theme-light:root .mainDrawer { 
+      background: -webkit-linear-gradient(to right, rgb(201, 214, 255), rgb(226, 226, 226))!important; 
+      background: linear-gradient(to right, rgb(201, 214, 255), rgb(226, 226, 226))!important;
+}
+.theme-light:root .cardBox { 
+      background: -webkit-linear-gradient(to right, rgb(201, 214, 255), rgb(226, 226, 226))!important; 
+      background: linear-gradient(to right, rgb(201, 214, 255), rgb(226, 226, 226))!important;
+}
+.theme-light:root .emby-select,.theme-light:root .emby-input,.theme-light:root .emby-textarea {
+    background: none;
+    border: calc(var(--line-size) * 1.8) solid var(--line-background);
+}
+.theme-light:root  .infoBanner,.theme-light:root  .defaultCardBackground0,.theme-light:root .paperList,.theme-light:root  .visualCardBox {
+    background: none;
+}
+.theme-light:root .darkContentContainer-item,.theme-light:root  {
+    --theme-text-color-hue: 0;
+    --theme-text-color-saturation: 0%;
+    --theme-text-color-lightness: 0%;
+    --theme-text-color-alpha: .87;
+    --background-hue: 150;
+    --background-saturation: 2.44%;
+    --background-lightness: 83.92%;
+    --background-alpha: 1;
+}
+.theme-light:root .mediaInfoItem a ,.theme-light:root .darkContentContainer-item .itemLinks .item-tag-button,.theme-light:root .darkContentContainer-item .itemTags .item-tag-button,.theme-light:root .darkContentContainer-item .splitVersionContainer .btnSplitVersions{
+    box-shadow: rgb(75 62 62 / 40%) 0 0 0 2px;
+}
+
+
+/*4.7.3以上版本修复theme-blueradiance*/
+.theme-blueradiance:root .darkContentContainer-item,.theme-blueradiance:root,.theme-blueradiance:root .dialog  {
+    --background-hue: 209!important;
+    --background-saturation: 94%!important;
+    --background-lightness: 19.61%!important;
+}
+.theme-superman:root .darkContentContainer-item,.theme-superman:root,.theme-superman:root .dialog {
+    --background-hue: 220;
+    --background-saturation: 30%;
+    --background-lightness: 20%;
+}
+.theme-wmc:root .darkContentContainer-item,.theme-wmc:root,.theme-wmc:root .dialog {
+    --background-hue: 220;
+    --background-saturation: 78.05%;
+    --background-lightness: 16.08%;
+}
+.theme-superman:root .dialog,.theme-superman:root .formDialogHeader:not(.formDialogHeader-clear),.theme-superman:root .formDialogFooter:not(.formDialogFooter-clear) {
+    background: var(--background-gradient);
+}
+.theme-appletv:root .darkContentContainer-item,theme-appletv:root  {
+    --theme-text-color-hue: 0;
+    --theme-text-color-saturation: 0%;
+    --theme-text-color-lightness: 0%;
+    --theme-text-color-alpha: .87;
+    --background-hue: 150;
+    --background-saturation: 2.44%;
+    --background-lightness: 83.92%;
+    --background-alpha: 1;
+}
+.theme-appletv:root .mediaInfoItem a ,.theme-appletv:root .darkContentContainer-item .itemLinks .item-tag-button,.theme-appletv:root .darkContentContainer-item .itemTags .item-tag-button,.theme-appletv:root .darkContentContainer-item .splitVersionContainer .btnSplitVersions{
+    box-shadow: rgb(75 62 62 / 40%) 0 0 0 2px;
+}
+.theme-appletv:root .skinHeader.semiTransparent:not(.videoOsdHeader){
+   color:inherit!important;
+}
+
+:root:not(.theme-superman):not(.theme-wmc) .cardBox {
+    background: var(--theme-background);
+    box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+}
+.theme-superman:root .cardBox, .theme-wmc:root .cardBox{
+    background: var(--background-gradient);
+    box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+}
+
+
+
+/*卡片增加边框*/
+.cardPadder-portrait,.cardPadder-square,.cardPadder-smallBackdrop,.homeSectionsContainer .itemsContainer-finepointerwrap .cardPadder-backdrop,.verticalSection.scenesSection .cardPadder-backdrop{
+    border: medium solid transparent !important;
+}
+
+/* 详细页影片图片当显示略缩图时，左右对调 */
+.detailImageContainer.detailImageContainer-main.flex.flex-direction-column.justify-content-center.itemsContainer.detailImageContainer-hidemobile.detailImageContainer-backdrop.generalItemsContainer, .detailImageContainer.detailImageContainer-main.flex.flex-direction-column.justify-content-center.itemsContainer.detailImageContainer-hidemobile.detailImageContainer-fourThree.generalItemsContainer {
+  order: 2;
+  width: clamp(35vw, 49.5em, 28vw) !important;
+  margin-right: 0 !important;
+  margin-left: 2.5em !important;
+}
+.detailImageContainer-backdrop .coveredImage,.detailImageContainer-fourThree .coveredImage, .detailImageContainer-backdrop  .cardImageContainer{
+    -o-object-fit: contain!important;
+    object-fit: contain!important;
+}
+div.detailImageContainerCard .cardBox {
+    margin: 0!important;
+}
+
+
+/*按标题排序 右侧导航位置及大小*/
+.alphaPickerButton-vertical {
+    right: -30%;
+}
+.alphaPickerButton {
+    font-size: large !important;
+}
+
+
+/* 缺失和未播出的剧集指示器*/
+.undefinedmissingIndicator, .undefinedunairedIndicator, .missingIndicator, .unairedIndicator {
+  background: #ababab52;
+  padding: 5px 15px;
+  margin: 10px 0;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.listItemImage:not(.coveredImage) {
+  -webkit-background-size: contain!important;
+  background-size: contain!important;
+}
+
+
+/*首页媒体库左右滚动显示*/
+.homeSectionsContainer .vertical-wrap,.homeSectionsContainer .itemsContainer-finepointerwrap {
+  flex-wrap: inherit!important;
+  scrollbar-width: none;
+}
+
+
+
+
+
+/*页面顶部导航背景恢复4.6样式*/
+
+div.tabs-viewmenubar-backgroundcontainer-backdropfilter {
+    background: none!important;
+    -webkit-backdrop-filter:  none!important;
+    backdrop-filter:  none!important;
+}
+div.tabs-viewmenubar-backgroundcontainer{
+    background: none!important;
+}
+button.emby-tab-button:focus, button.emby-tab-button-active {//background: none;}
+/*视频播放页面去掉信息等tab
+div.videoOsdBottom-tabs {display: none;}*/
+
+
+
+
+/*列表多选背景圆角*/
+@media (hover: hover) and (pointer: fine){
+.chkListItemSelectContainer,.chkDataGridItemSelectContainer {
+    border-radius: 0.6em;
+    left: -3.9em!important;
+}
+}
+/* 左右横向滚动箭头 */
+button.emby-scrollbuttons-scrollbutton.paper-icon-button-light {
+    box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 99%)!important;
+    -webkit-box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 99%)!important;
+    -moz-box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 99%)!important;
+    -webkit-backdrop-filter: blur(0.5em) saturate(0.5)!important;
+    backdrop-filter: blur(0.5em) saturate(0.5)!important;
+    margin: -20px 30px 0;
+    background: #ffffff30;
+    font-size: .8em;
+}		
+.scrollbuttoncontainer { background: transparent!important; }
+
+
+
+/*主页中间导航缩小与最大化样式一致 */
+
+@media not all and (min-width: 120em) {
+@media (min-width: 65em){
+.headerTop-withSectionTabs .headerMiddle-withSectionTabs:not(.headerMiddle-tv) {
+    padding-top: 0em;
+    margin-top:-3em;
+}
+ .page-windowScroll.withTabs,html:not(.layout-tv) .withTabs .padded-top-page {
+    padding-top: 6em!important;
+    padding-top: calc(6em + env(safe-area-inset-top,0))!important;
+}
+.skinHeader-withBackground.skinHeader-withfulldrawer,.skinHeader-withBackground {
+    max-height: 5em;
+}
+/*页面返上滚动时，修改导航头部高度过高问题*/
+div.headerTop-withSectionTabs.headroom-scrolling:not(.skinHeader-tv) {
+    height: calc(2.6em + 2 * max(1.2em,env(safe-area-inset-top,0)));
+}
+div.headroom-scrolling:not(.skinHeader-tv) {
+    height: calc(2.125em + 2 * max(1.2em,env(safe-area-inset-top,0)));
+}
+/*表格模式优化*/
+.withTabs .itemsViewSettingsContainer-fixed {
+    top: 6em!important;
+}
+
+.withTabs .itemsContainer_header_fixed {
+    top: 10em!important;
+}
+html:not(.layout-tv) .withTabs .margin-top-page-listheader {
+    margin-top: calc(14.3em + env(safe-area-inset-top,0))!important;
+}
+
+}
+}
+
+
+
+
+
+
+
+
+/*修改电视模式下 外部播放器 项 左边溢出界面问题*/
+.dialogContainer .emby-checkbox-label {
+    width: auto!important;
+}
+/*【媒体库】4.7.6*/
+.itemsContainer [data-id="3227ce1e069754c594af25ea66d69fc7"] .cardPadder-smallBackdrop:hover {
+    background: url(/web/预览图/JULIA.png)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+.itemsContainer [data-id="7279167d46b42d7d5f7fec984ef355fa"] .cardPadder-smallBackdrop:hover {
+    background: url(/web/预览图/SSIS-448.png)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+
+.itemsContainer [data-id="e7bfe656953e3fad0bdf034be7969a97"] .cardPadder-smallBackdrop:hover {
+    background: url(/web/预览图/合集.png)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+/*【媒体库】4.7.7-9*/
+.itemsContainer [data-id="5"] .cardPadder-smallBackdrop:hover {
+    background: url(/web/预览图/JULIA.png)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+.itemsContainer [data-id="4643"] .cardPadder-smallBackdrop:hover {
+    background: url(/web/预览图/SSIS-448.png)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+
+.itemsContainer [data-id="4462"] .cardPadder-smallBackdrop:hover {
+    background: url(/web/预览图/合集.png)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+/*【媒体库】4.7.9*/
+.itemsContainer [data-id="5"] .cardPadder-backdrop:hover {
+    background: url(/web/预览图/JULIA.png)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+.itemsContainer [data-id="4643"] .cardPadder-backdrop:hover {
+    background: url(/web/预览图/SSIS-448.png)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+
+.itemsContainer [data-id="4462"] .cardPadder-backdrop:hover {
+    background: url(/web/预览图/合集.png)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+.itemsContainer [data-id="420523"] .cardPadder-backdrop:hover {
+    background: url(/web/预览图/森泽佳奈1.webp)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+.itemsContainer [data-id="14097"] .cardPadder-backdrop:hover {
+    background: url(/web/预览图/小野夕子1.webp)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+.itemsContainer [data-id="15797"] .cardPadder-backdrop:hover {
+    background: url(/web/预览图/小野夕子2.webp)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+.itemsContainer [data-id="229144"] .cardPadder-backdrop:hover {
+    background: url(/web/预览图/小野夕子3.webp)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+.itemsContainer [data-id="3"] .cardPadder-backdrop:hover {
+    background: url(/web/预览图/小野夕子4.webp)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+.itemsContainer [data-id="437651"] .cardPadder-backdrop:hover {
+    background: url(/web/预览图/电影.png)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+.itemsContainer [data-id="523271"] .cardPadder-backdrop:hover {
+    background: url(/web/预览图/剧集.png)no-repeat center center;
+    background-size: 100% 100%;
+
+}
+:is( [data-parentid="5"],[data-parentid="4643"],[data-parentid="229144"],[data-parentid="15797"]) .cardPadder-backdrop:hover {
+    background: url(/web/预览图/NC-17.webp)no-repeat center center;
+    background-size: 100% 100%;
+    content:"";
+}
+:is( [data-parentid="5"],[data-parentid="4643"],[data-parentid="229144"],[data-parentid="15797"]) .backdropCard .cardOverlayFab-primary {
+    opacity: 0.1;
+}
+.dialogContainer:not(.dialogBackdrop) .formDialog {
+    min-width: clamp(20%,90ch,50%);
+}
+
+.dialogContainer:not(.dialogBackdrop) .dialog-content-centered {
+    max-width: fit-content;
+}
+
+/*演员圆形*/
+div.peopleSection  .itemsContainer .cardBox-touchzoom:hover{
+	border: none!important;
+	margin:8% 8% 14% 8%!important;
+	box-shadow: none!important;
+}
+div.peopleSection  .cardPadder-portrait:hover {
+	border: 1px solid #7372e9!important;
+	box-shadow: 0 0 10px #719ece!important;
+}
+
+div.peopleSection .cardPadder-portrait {
+    border-radius: 100%!important;
+    aspect-ratio: 1!important;
+    padding-bottom: 100%;
+    border-style: solid!important;
+    border-width: 0!important;
+    border-color: var(--theme-background)!important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+
+}
+
+:root div.details-additionalContent .peopleSection  .cardBox {
+    background: none!important;
+    box-shadow: none!important;
+    outline: none!important;
+    border: 0!important;
+}
+
+div.peopleSection .cardOverlayButton-br {
+    right: auto;
+}
+
+/*文件夹为图片为正方形时改为圆形*/
+
+div.tabContent[data-index="12"]  .itemsContainer .squareCard .cardBox-touchzoom:hover{
+	border: none!important;
+	margin:8%!important;
+	box-shadow: none!important;
+}
+div.tabContent[data-index="12"]  .cardPadder-square:hover {
+	border: 1px solid #7372e9!important;
+	box-shadow: 0 0 10px #719ece!important;
+}
+div.tabContent[data-index="12"]  .cardPadder-square{
+    border-radius: 100%!important;
+    aspect-ratio: 1!important;
+    padding-bottom: 100%;
+    border-style: solid!important;
+    #border-width: 2px 2px 2px 2px!important;
+    border-width: 0!important;
+    border-color: var(--theme-background)!important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+
+}
+
+:root div.tabContent[data-index="12"]  .squareCard .cardBox{
+    background: none!important;
+    box-shadow: none!important;
+    outline: none!important;
+    border: 0!important;
+}
+div.tabContent[data-index="12"]   .squareCard .cardOverlayButton-br {
+    bottom: 1em;
+    right: auto;
+}
+div.tabContent[data-index="12"]   .squareCard .chkCardSelectContainer {
+    right: 0;
+    left: auto;
+    bottom: 0;
+    align-items: center!important;
+}
+
+div.tabContent[data-index="12"]   .squareCard .innerCardFooter {
+    background-color: #ffffff65;
+    bottom: 0.5em;
+    text-align: center;
+    color: var(--theme-background);
+
+}
+div.tabContent[data-index="12"]  .cardIndicatorIcon {display: none;}
+div.tabContent[data-index="7"]  .cardIndicatorIcon {display: none;}
+
+/*播放列表、类型、风格、标签拉伸图片比例，使得图片不被压扁*/
+[data-canrefresh="true"] [data-parentid="14097"] .cardPadder-square img.cardImage, .tabContent:nth-last-child(13):first-child ~ .tabContent[data-index="7"]:not(.home-horiz-tabContent) .cardPadder-square  img.cardImage{
+    object-fit: fill;
+}
+@supports (aspect-ratio:16 / 9){
+
+
+.details-additionalContent .itemsContainer:not(.childrenItemsContainer[data-virtualscrolllayout="horizontal-grid"]):not(.moreFromArtistItemsContainer):not(.similarItemsContainer) .cardPadder-square,.tabContent:nth-last-child(9):first-child ~ .tabContent[data-index="5"]:not(.home-horiz-tabContent)  .cardPadder-square:not([data-action="custom"])  ,.tabContent:nth-last-child(13):first-child ~ .tabContent[data-index="7"]:not(.home-horiz-tabContent)  .cardPadder-square ,.tabContent:nth-last-child(13):first-child ~ .tabContent[data-index="9"]:not(.home-horiz-tabContent)  .cardPadder-square,.tabContent:nth-last-child(13):first-child ~ .tabContent[data-index="10"]:not(.home-horiz-tabContent)  .cardPadder-square,.listifyConfigurationPage .itemsContainer[id="managedPlaylistsWrap"] .cardPadder-square{
+    padding-bottom:0!important;
+    aspect-ratio: var(--Portrait-ratio);
+}
+
+.details-additionalContent .itemsContainer:not(.childrenItemsContainer[data-virtualscrolllayout="horizontal-grid"]):not(.moreFromArtistItemsContainer):not(.similarItemsContainer)  .cardPadder-square .coveredImage,.listifyConfigurationPage .itemsContainer[id="managedPlaylistsWrap"] .cardPadder-square .coveredImage{
+    object-fit: fill!important;
+}
+
+}
+
+.details-additionalContent .itemsContainer:not(.childrenItemsContainer[data-virtualscrolllayout="horizontal-grid"]):not(.moreFromArtistItemsContainer):not(.similarItemsContainer)  .cardPadder-square,.tabContent:nth-last-child(9):first-child ~ .tabContent[data-index="5"]:not(.home-horiz-tabContent)  .cardPadder-square ,.tabContent:nth-last-child(13):first-child ~ .tabContent[data-index="7"]:not(.home-horiz-tabContent) .cardPadder-square ,.tabContent:nth-last-child(13):first-child ~ .tabContent[data-index="9"]:not(.home-horiz-tabContent)  .cardPadder-square,.tabContent:nth-last-child(13):first-child ~ .tabContent[data-index="10"]:not(.home-horiz-tabContent) .cardPadder-square,.listifyConfigurationPage .itemsContainer[id="managedPlaylistsWrap"] .cardPadder-square  {
+    padding-bottom: var(--Portrait-padding);
+}
+
+.details-additionalContent .itemsContainer:not(.childrenItemsContainer[data-virtualscrolllayout="horizontal-grid"]):not(.moreFromArtistItemsContainer):not(.similarItemsContainer)  .cardPadder-square  .coveredImage,.tabContent:nth-last-child(9):first-child ~ .tabContent[data-index="5"]:not(.home-horiz-tabContent)  .cardPadder-square .coveredImage ,.tabContent:nth-last-child(9):first-child ~ .tabContent[data-index="4"]:not(.home-horiz-tabContent)  .cardPadder-square .coveredImage,.tabContent:nth-last-child(13):first-child ~ .tabContent[data-index="7"]:not(.home-horiz-tabContent)  .cardPadder-square .coveredImage,.tabContent:nth-last-child(13):first-child ~ .tabContent[data-index="9"]:not(.home-horiz-tabContent)  .cardPadder-square  .coveredImage,.tabContent:nth-last-child(13):first-child ~ .tabContent[data-index="10"]:not(.home-horiz-tabContent) .cardPadder-square  .coveredImage,.listifyConfigurationPage .itemsContainer[id="managedPlaylistsWrap"] .cardPadder-square .coveredImage {
+    object-fit: fill!important;
+}
+
+
+/*媒体封面支持动图*/
+.noScrollY {
+        width: max-content;
+ }
+ /*详细页背景图*/
+div.itemBackdrop{
+    background-position: top right;
+    background-size: cover;
+}
+/*
+div.itemBackdropContainer {
+    height: 67.25vw;
+    position: relative;
+}
+*/
+@media not  all and (max-width: 50em){
+:root:not(.withHeaderTabs) .itemBackdrop,:root:not(.withHeaderTabs)  .backdropImage  {
+    object-position: right top;
+    object-fit: cover;
+    height: 100% !important;
+    z-index: 0;
+    position: absolute;
+    background-position: top right;
+    right: 0;
+    left: 30vw;
+    width: 70vw;
+    background-size: cover;
+    background-attachment: scroll;
+    mask-image: linear-gradient(to right, transparent, black), linear-gradient(to top, transparent, black);
+    -webkit-mask-image: linear-gradient(to right, transparent, black), linear-gradient(to top, transparent, black);
+    mask-composite: source-in;
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+}
+.videoPlayerContainer+.backdropContainer.backdropContainer-preventbackdrop.hide+.backgroundContainer.itemBackgroundContainer{
+    display:initial!important;
+    background: var(--theme-background)!important;
+    z-index: 0!important;
+    opacity: 0.6!important;
+}
+.videoPlayerContainer+.backdropContainer.backdropContainer-preventbackdrop.hide .backdropImage{display:none}
+
+}
+/*详细页标题及封面*/
+@media not all and (max-width: 50em){
+.itemName-primary {
+    font-size: calc(160% * 2);
+    max-width: 62vw;
+    max-width: 55vw;
+}
+.itemName-primary-logo {
+    font-size: calc(160% * 2.5);
+}
+}
+
+div.detailTextContainer {
+    padding: 0 1.5em;
+}
+/*隐藏详细页封面*/
+.detailImageContainer-main.detailImageContainer-portrait,.detailImageContainer-main.detailImageContainer-square {
+    display: none;
+}
+/*详细页封面相关信息,当隐藏封面是无效*/
+.detailImageContainer-main.detailImageContainer-portrait {
+    margin-top: 0.68em;
+}
+.detailImageContainer-main {
+    width: 18vw!important;
+}
+.detailImageContainer-main-tv.detailImageContainer-portrait {
+    width: clamp(6vw,23.5em,min(25vw,calc(70vh * (2 / 3))))!important;
+}
+
+
+/*【节目界面】背景图片提高遮罩亮度*/
+@media all and (min-width: 50em) {
+   .backgroundContainer.withBackdrop.itemBackgroundContainer{
+        background: transparent !important;
+        opacity: 1 !important;
+    }
+}
+/*【节目界面】背景图片提高遮罩亮度后的简介文字阴影和折叠显示行数*/
+@media all and (min-width: 50em) {
+    .overview-text.readOnlyContent {
+        text-shadow: .2px .2px 1px rgba(0, 0, 0, .91);
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+    .layout-tv.noScrollY .overview-text.readOnlyContent {
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        line-height: 1.46em;
+    }
+}
+
+
+
+/*【节目界面】媒体类型标签链接自动换行样式*/
+.detailMainContainer  .mediaInfoItem:last-child{
+    width: 100%;
+    margin-top: .1em;
+    margin-bottom: .1em;
+    margin-left: .2em;
+}
+
+
+/*【节目界面】媒体类型样式调整并添加外边框*/
+.mediaInfoItem a{
+    box-shadow: rgba(255, 255, 255, .4) 0 0 0 2px;
+    font-size: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    padding: 2px 8px;
+    border-radius: 30em;
+}
+/*【节目界面】媒体类型添加底色背景样式*/
+@media all and (min-width: 50em) {
+    .darkContentContainer-item .mediaInfoItem a {
+        background: rgba(115, 115, 115, .5);
+        backdrop-filter: blur(1.5em) saturate(1.8);
+    }
+    .mediaInfoItem .emby-button-focusscale:focus {
+        background: rgba(255, 255, 255, 1);
+    }
+}
+
+
+ .topDetailsContainer .topDetailsMain .detailMainContainer .detailButton {
+        backdrop-filter: blur(1.5em) saturate(1.8);
+        border-radius: 5em !important;
+}
+
+
+/*【节目界面】播放器控件按钮添加底色背景样式*/
+@media all and (min-width: 50em) {
+    .darkContentContainer-item .detailTrackSelect,.darkContentContainer-item .detailButton{
+        background: rgba(115, 115, 115, .5)!important;
+        backdrop-filter: blur(1.5em) saturate(1.8) !important;
+        border-radius: 50em !important;
+    }
+    .emby-button-focusscale:focus {
+        background: var(--theme-primary-color);
+    }
+    .detailButton {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+    }
+}
+/*【节目界面】数据库链接、标签、拆分版本按钮添加底色背景样式*/
+@media all and (min-width: 50em) {
+    .darkContentContainer-item .itemLinks .item-tag-button,.darkContentContainer-item .itemTags .item-tag-button,.darkContentContainer-item .splitVersionContainer .btnSplitVersions {
+        background: rgba(115, 115, 115, .3);
+        backdrop-filter: blur(1.5em) saturate(1.8) !important;
+        box-shadow: rgba(255, 255, 255, .4) 0 0 0 2px;
+        border-radius: 30px;
+        #color: #fff;
+        font-size: 100%;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 8px;
+        padding: 2px 8px;
+    }
+}
+
+/*【搜索界面】搜索输入框添加圆角样式*/
+input.searchfields-txtSearch {
+    padding: .6em;
+    padding-left: 1em;
+    border-radius: 30px;
+}
+/*【搜索界面】建议栏目使用平铺样式*/
+.searchSuggestionsList div {
+    display: inline-block;
+}
+/*【搜索界面】建议栏目添加底色背景样式*/
+.searchSuggestionsList a {
+    background: rgba(0, 0, 0, .2);
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 90%;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, .9);
+}
+/*【节目界面】版本、视频、音频、字幕信息自动换行和对齐样式*/
+@media all and (min-width: 80em) {
+
+@supports selector(:hover) and (display:revert) and (column-gap:1em){
+.trackSelections {
+    flex-direction: column;
+    align-items: flex-start;
+}
+}
+
+.trackSelections .selectContainer {
+    margin-top: 0.8em!important;
+} 
+.flex-grow.detailTextContainer {
+  display: grid !important;
+  overflow: visible;
+}
+.flex-grow.detailTextContainer form.trackSelections {
+  order: 3 !important;
+}
+
+
+}
+
+
+
+
+/*调整导航下方过滤器等按钮背景 4.7.10已失效*/
+@supports (backdrop-filter:blur(1em)) or (-webkit-backdrop-filter:blur(1em)){
+.emby-select-backdropfilter.detailTrackSelect, .fab-backdropfilter, .raised-backdropfilter {
+    -webkit-backdrop-filter: none!important;
+    backdrop-filter:none!important; 
+    background: #ffffff25!important;
+}
+}
+
+/*仪表盘页版本、端口等信息大小*/
+.dashboardSections .cardImageContainer-sideFooter {
+    width: 8em;
+    height: 5.4em;
+}
+
+
+
+
+/*卡片文字相关*/
+.cardText-first{
+    padding-left: 0.3em!important;
+    padding-right: 0.3em!important;
+}
+.cardFooter.cardFooter-vibrant {
+    padding: 0;
+}
+/*修改卡片只有一行下边距*/
+.cardText:last-child:not(.cardText-secondary).cardText-first{
+    padding-bottom: 0.3em;
+}
+
+:root.withHeaderTabs .view[data-canrefresh="true"] .cardText-secondary{
+    display:none!important;
+}
+:root.withHeaderTabs .view[data-canrefresh="true"]  .cardText-first{
+    padding-bottom: 0.3em;
+}
+
+.view[data-type="home"]+.view[data-canrefresh="true"] .cardText-secondary{
+    display:none!important;
+}
+.view[data-type="home"]+.view[data-canrefresh="true"]  .cardText-first{
+    padding-bottom: 0.3em;
+}
+div[data-parentid="4462"] .cardText-secondary,div[data-parentid="420523"]  .cardText-secondary{
+    display:none!important;
+}
+div[data-parentid="4462"] .cardText-first,div[data-parentid="420523"] .cardText-first{
+    padding-bottom: 0.3em;
+}
+.dialogContainer .button-link {
+    text-align: left;
+}
+
+.peopleSection .cardTextActionButton, .scenesSection  .cardTextActionButton{
+    text-align: center!important;
+    height: auto!important;
+}
+
+.cardTextActionButton{
+    #text-align: left;
+    #white-space: normal;
+    #height:2.7em;
+    border-radius: 0;
+}
+.cardText-secondary {
+    font-size: 92%;
+    display: inline-block!important;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    margin: 2px 2px 0 2px!important;
+    -webkit-align-items: center;
+    align-items: center;
+    vertical-align: initial!important;
+    max-width: -webkit-fill-available;
+}
+.cardMediaInfoItems {
+    top: 1px;
+    position: relative;
+}
+div.card {
+    line-height: initial;
+}
+.homeSectionsContainer .cardText-secondary, div.tabContent[data-index="1"]  .verticalSection  .cardText-secondary, div.tabContent[data-index="6"]  .itemsContainer .cardText-secondary {
+    width: 100%!important;
+}
+
+
+
+/*修复星愿浏览器排版问题*/
+.infoBanner {
+    margin-right: 1em;
+}
+.navMenuOption {
+    -webkit-align-items: initial!important;
+    align-items: initial!important;
+}
+
+
+/*顶部导航栏背景*/
+.skinHeader-withBackground.skinHeader-withbackdropfilter {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: linear-gradient( to bottom, rgb(20 20 20 / 50%), transparent ) !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+.skinHeader-withBackground.headroom-scrolling {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: blur(2px);
+    background: linear-gradient( to bottom, rgb(20 20 20 / 70%), rgb(20 20 20 / 10%) ) !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+
+
+
+
+
+/*调整搜索框位置*/
+.searchFieldsInner {
+    margin-top: 1em!important;
+}
+
+
+
+/* 修改视频详细页章节演职人员等顺序*/
+.details-additionalContent.padded-bottom-page.details-additionalContent-withbackdrop {
+    display: flex;
+    flex-direction: column;
+}
+div.verticalSection.itemNextUpSection {order: 0;}
+div.verticalSection.additionalPartsSection {}
+div.verticalSection.artistSongsSection {}
+div.verticalSection.childrenSection {order: 1;}
+div.verticalSection.trailersSection {}
+div.verticalSection.moreFromSeasonSection {order: 2;}
+div.verticalSection.peopleSection {order: 3;}
+div.verticalSection.extrasSection {}
+div.verticalSection.scenesSection{order: 4;}
+div.verticalSection.tagsSection{order: 8;}
+div.verticalSection.moreFromArtistSection {}
+div.verticalSection.seriesScheduleSection {}
+div.verticalSection.appearsOnListsSection {order: 6;} 
+div.verticalSection.similarSection {order: 5;} 
+div.verticalSection.similarOnLiveTVCollapsible {order: 7; }
+div.verticalSection.seriesTimerScheduleSection {}
+div.verticalSection.linksSection{order: 9;}
+div.verticalSection.audioVideoMediaInfo{order: 10;}
+
+
+
+
+/*调整自定CSS输入框大小*/
+.txtCustomCss.textarea-mono.emby-textarea { min-height: 1000px; }
+
+
+
+/* 显示模式为电视模式，优化调整*/
+.horizontalSection .sectionTitle {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    max-width: 36.5em;
+    display: block;
+}
+
+.wideSpotlightCard .coveredImage,.wideSpotlightCard .cardImageContainer{
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center top;
+    -o-object-fit: cover !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+}
+
+.home-horiz .horizontalSection.resumeSection .backdropCard{
+    width: 14em;
+}
+.horizontalSection .portraitCard {
+    width: 10.8em!important;
+}
+.home-horiz-tabContent .portraitCard {
+    width: 10.8em!important;
+}
+.home-horiz-tabContent .squareCard {
+    width: 9.8em!important;
+}
+
+div.selectedItemInfo {
+    height: 11vh;
+}
+/*4.6.7
+.wideSpotlightCard .cardScalable {
+    height: 16.6em!important;
+}
+.homePageContent .portraitCard {
+    width: 9.05em!important;
+}
+.homePageContent .backdropCard:not(.wideSpotlightCard) {
+    width: 12.3em!important;
+}
+*/
+
+
+/*详细页类型行宽*/
+.mediaInfoPrimary{
+    max-width: 62vw!important;
+}
+
+/*设置字幕字体*/
+.videoSubtitles {
+    margin: -2%!important;
+    font-family: 华文仿宋,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,system-ui,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Open Sans',sans-serif!important;
+    font-size: 120%;
+}
+
+
+/*隐藏一些按钮*/
+div.verticalSection.peopleSection .cardImageIcon.md-icon{display: none; }
+div.card.squareCard.detailImageContainerCard.card-hoverable  .cardImageIcon.md-icon{display: none; }
+
+/*演员无图片时设置默认图*/
+div.verticalSection.peopleSection  .defaultCardBackground {
+    background-image:url(data:image/png;base64,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) ; 
+    background-size: cover;
+    background-position: center top;
+  }
+
+div.card.squareCard.detailImageContainerCard.card-hoverable  .detailImage.defaultCardBackground{
+    background-image:url(data:image/png;base64,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) ; 
+    background-size: cover;
+    background-position: center top;
+}
+
+
+
+/* 已播放角标
+@media (orientation: portrait) and (min-width: 24em){
+.cardImageContainer i.cardPlayedIndicator:before, .listItemImageContainer i.listItemPlayedIndicator:before  {
+    width: 6vw;
+    height: 6vw;
+    content: ' ';
+    background: #bf0008;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    //border-radius: 0 0.5em 0 0;
+    clip-path: polygon(0 0, 100% 0,100% 100%);
+}
+.backdropCard .cardImageContainer i.cardPlayedIndicator:before,.backdropCard .listItemImageContainer i.listItemPlayedIndicator:before  {
+    clip-path: polygon(0 0.7vw, calc(100% - 0.7vw) 0.7vw,calc(100% - 0.7vw) 100%);
+}
+}
+@media (min-width: 62.5em){
+.cardImageContainer i.cardPlayedIndicator:before, .listItemImageContainer i.listItemPlayedIndicator:before  {
+    width: 2vw;
+    height:  2vw;
+    content: ' ';
+    background: #bf0008;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    //border-radius: 0 0.5em 0 0;
+    clip-path: polygon(0 0, 100% 0,100% 100%);
+}
+.backdropCard .cardImageContainer i.cardPlayedIndicator:before,.backdropCard .listItemImageContainer i.listItemPlayedIndicator:before  {
+    clip-path: polygon(0 0.28vw, calc(100% - 0.28vw) 0.28vw,calc(100% - 0.28vw) 100%);
+}
+}
+
+
+.cardImageContainer i.cardPlayedIndicator, .listItemImageContainer i.listItemPlayedIndicator {
+    overflow: visible;
+    z-index: 1;
+    background: none;
+    box-shadow: none;
+    font-size: 0px;
+    padding: 2px;
+}
+*/
+
+/* 已播放角标*/
+
+.cardPadder-portrait i.cardPlayedIndicator{
+    width: calc(100%/ max((var(--portrait-cards) + var(--user-cards-size-adjust)),5));
+    height: calc(100%*var(--Portrait-ratio) / max((var(--portrait-cards) + var(--user-cards-size-adjust)),5));
+    content: ' ';
+    background: #bf0008;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    clip-path: polygon(0 0, 100% 0,100% 100%);
+}
+.cardPadder-square i.cardPlayedIndicator{
+    width: calc(100%/ max((var(--square-cards) + var(--user-cards-size-adjust)),4));
+    height: calc(100% / max((var(--square-cards) + var(--user-cards-size-adjust)),4));
+    content: ' ';
+    background: #bf0008;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    clip-path: polygon(0 0, 100% 0,100% 100%);
+}
+.cardPadder-backdrop i.cardPlayedIndicator{
+    width: calc(50%/ max((var(--backdrop-cards) + var(--user-cards-size-adjust)),5));
+    height: calc(50%*var(--Backdrop-ratio) / max((var(--backdrop-cards) + var(--user-cards-size-adjust)),5));
+    content: ' ';
+    background: #bf0008;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    clip-path: polygon(0 0, 100% 0,100% 100%);
+}
+
+ .listItemImageContainer i.listItemPlayedIndicator  {
+    width: calc(9vw / max((var(--portrait-cards) + var(--user-cards-size-adjust)),4));
+    height: calc(9vw / max((var(--portrait-cards) + var(--user-cards-size-adjust)),4));
+    content: ' ';
+    background: #bf0008;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    clip-path: polygon(0 0, 100% 0,100% 100%);
+}
+:is([data-parentid="5"],[data-parentid="4643"]) .backdropCard .cardImageContainer i.cardPlayedIndicator,:is([data-parentid="5"],[data-parentid="4643"]) .backdropCard .listItemImageContainer i.listItemPlayedIndicator  {
+    margin-top: 1.5%;
+    margin-right: 1.5%;
+    right: 0px;
+}
+.cardImageContainer i.cardPlayedIndicator, .listItemImageContainer i.listItemPlayedIndicator {
+    overflow: visible;
+    z-index: 1;
+    box-shadow: none;
+    font-size: 0px;
+    padding: 2px;
+}
+
+
+/*修改最大化时卡片数量，从而达到放大图片的目的*/
+/*竖向图片大小
+@media (min-width: 115em){
+.portraitCard, .smallBackdropCard, .squareCard {
+    width: 14.285714285714285714285714285714%;
+}
+.portraitCard-horiz, .squareCard-horiz {
+    width: 13.14285714285714vw;
+}
+}
+*/
+/*横向图片大小*/
+/*@media (min-width: 120em){
+.backdropCard {
+    width: 20%;
+}
+.backdropCard-horiz{
+    width: 19vw;
+}
+}
+@media (min-width: 95em){
+.backdropCard-horiz {
+    width: 19vw;
+}
+}
+*/
+/*修改主页我的媒体卡片大小
+@media (min-width: 100em){
+.smallBackdropCard{
+    width: 20%;
+}
+}
+*/
+/*4.7.9*/
+@supports (width:max(10em,5vw)){
+
+.itemsContainer:not(.itemsContainer-finepointerwrap):not(.chaptersItemsContainer) .backdropCard {
+    width: calc(100% / max((var(--backdrop-cards) + var(--user-cards-size-adjust) + 1 + var(--app-cards-size-adjust)),2));
+}
+.itemsContainer:not(.itemsContainer-finepointerwrap):not(.chaptersItemsContainer) .backdropCard-horiz {
+    width: calc(92vw / max((var(--backdrop-cards) + 1 + var(--user-cards-size-adjust)),2));
+}
+.smallBackdropCard {
+    width: calc(100% / max((var(--small-backdrop-cards) + 1 + var(--user-cards-size-adjust) + var(--app-cards-size-adjust)),2));
+}
+.fourThreeCard {
+    width: calc(100% / max((var(--four-three-cards) + var(--user-cards-size-adjust) + 1 + var(--app-cards-size-adjust)),2));
+}
+.fourThreeCard-horiz {
+    width: calc(92vw / max((var(--four-three-cards) + 1 + var(--user-cards-size-adjust)),2));
+}
+
+.bannerCard {
+    width: calc(100% / max((var(--banner-cards) + var(--user-cards-size-adjust) + 2 + var(--app-cards-size-adjust)),1));
+}
+.smallSideFooterCard {
+    width: calc(100% / max((var(--small-sidefooter-cards) + var(--user-cards-size-adjust) + 2 + var(--app-cards-size-adjust)),2));
+}
+.sideFooterCard-horiz {
+    width: calc(92vw / max((var(--sidefooter-cards) + 2 + var(--user-cards-size-adjust)),1));
+}
+.portraitCard {
+    width: calc(100% / max((var(--portrait-cards) + var(--user-cards-size-adjust) + var(--app-cards-size-adjust)),4));}
+}
+.portraitCard-horiz {
+    width: calc(92vw / max((var(--portrait-cards) + var(--user-cards-size-adjust)),4));
+}
+
+}
+
+@media (min-width: 40em){
+@supports (width:max(10em,5vw)){
+div.smallSideFooterCard {
+    width:16.667%;
+    width: calc(100% / max((var(--small-sidefooter-cards) + 3 + var(--user-cards-size-adjust) + var(--app-cards-size-adjust)),2)); 
+}
+}
+}
+/*4.7.9标记播放状态等按钮大小*/
+.cardOverlayButton-br {
+    font-size: calc(0.1em * max((var(--portrait-cards) - var(--user-cards-size-adjust)  + var(--app-cards-size-adjust)),5) );
+    font-size: calc(11% * max((var(--portrait-cards) - var(--user-cards-size-adjust)  + var(--app-cards-size-adjust)),5) );
+}
+
+
+/*卡片背景透明*/
+.cardContent-shadow {
+    background-color:transparent !important;
+}
+
+/*选中时卡片缩小比例*/
+.item-multiselected .cardImageContainer {
+    -webkit-transform: none!important;
+    transform: none!important;
+}
+.item-multiselected .cardBox{
+    -webkit-transform: translateZ(0) scale3d(.9,.9,1)!important;
+    transform: translateZ(0) scale3d(.9,0.9,1)!important;
+}
+/*封面卡片四角弧度*/
+
+div.cardScalable {
+    border-radius: .0rem!important;
+}
+
+.cardImageContainer {
+    -webkit-border-radius: .0em!important;
+    border-radius: .0rem!important;
+}
+
+div.sessionNowPlayingContent {
+    border-radius: .0rem!important;
+}
+
+div.activeSession .cardContent {
+    border-radius: .0rem!important;
+}
+
+div.paperList {
+    border-radius: .0rem!important;
+}
+
+div.cardBox.visualCardBox {
+    border-radius: .0rem!important;
+}
+
+
+div.visualCardBox .cardContent {
+    border-bottom-left-radius: .0rem!important;
+    border-bottom-right-radius: .0rem!important;
+}
+
+/*选择框位置*/
+.chkCardSelectContainer {
+    left: auto!important;
+    right: 0!important;
+}
+
+
